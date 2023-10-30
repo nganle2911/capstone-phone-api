@@ -1,0 +1,16 @@
+// Helpers 
+@import "./Helpers/variables"; 
+
+// Base
+@import "./Base/reset";
+
+// Components
+@import "./Components/header";
+@import "./Components/footer";
+
+// Layouts
+@import "./Layouts/modal";
+
+// Pages 
+@import "./Pages/homepage"; 
+@import "./Pages/admin";

@@ -1,0 +1,75 @@
+header.admin_header {
+
+    .navbar {
+        background-color: $black-2;
+
+        .container {
+            .navbar-brand {
+                color: $white-3;
+                font-size: $num-20 + 5;
+
+                i {
+                    margin-right: $num-3 + 2;
+                }
+            }
+
+            .navbar-collapse {
+                display: flex;
+                justify-content: space-between;
+
+                .nav_left {
+                    margin-left: $num-20;
+
+                    .nav-item {
+                        margin-right: $num-30;
+                        transform: scale(1);
+                        
+                        .nav-link {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            color: $white-3;
+                            transition: 0.3s ease-in-out;
+
+                            i {
+                                font-size: $num-20 + 5;
+                            }
+                        }
+
+                        &:hover {
+                            .nav-link:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+
+                .nav_right {
+                    .nav-item {
+                        transform: scale(1);
+
+                        .nav-link {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            color: $white-3;
+                            transition: 0.3s ease-in-out;
+
+                            i {
+                                font-size: $num-20 + 5;
+                            }
+                        }
+
+                        &:hover {
+                            .nav-link:hover {
+                                transform: scale(1.2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

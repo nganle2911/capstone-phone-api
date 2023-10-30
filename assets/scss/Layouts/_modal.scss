@@ -1,0 +1,28 @@
+.modalPhone {
+    .modal-content {
+        background-color: $white-3;
+        border-radius: 0;
+        height: 80vh;
+
+        .modal-header {
+            .modal-title {
+                margin: 0 auto;
+                font-size: $num-30;
+            }
+        }
+
+        .modal-body {
+            
+            form {
+                background: $pink-2;
+                background: -webkit-linear-gradient(to right, $pink-3, $pink-2);
+                background: linear-gradient(to left, $pink-3, $pink-2);
+                padding: $num-20;
+
+                .form-group {
+                    padding-bottom: $num-10;
+                }
+            }
+        }
+    }
+}
