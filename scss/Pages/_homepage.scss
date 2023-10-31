@@ -13,7 +13,6 @@
             text-decoration: none;
 
             .item {
-
                 .item_pic {
                     display: flex;
                     align-items: center;
@@ -23,8 +22,8 @@
                     background: $white-1;
                     border-radius: $num-75;
                     margin: auto $num-150;
-                    transition: 1s box-shadow;
-                    position: relative;
+                    transform: scale(1);
+                    transition: all 0.3s ease-in-out;
 
                     img {
                         width: 100%;
@@ -35,14 +34,22 @@
                     color: $white-2;
                     text-align: center;
                     margin-top: $num-20;
+                    transform: scale(1);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                &:hover {
+                    .item_pic {
+                        border: 5px solid $yellow-1;
+                        transform: scale(0.9);
+                    }
+                    h1 {
+                        color: $yellow-1;
+                        transform: scale(0.7);
+                    }
                 }
             }
 
-            &:hover {
-                h1:hover {
-                    color: $yellow-1;
-                }
-            }
         }
     }
 }

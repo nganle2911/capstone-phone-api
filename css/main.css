@@ -165,8 +165,8 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
   background: rgb(211, 215, 216);
   border-radius: 75px;
   margin: auto 150px;
-  transition: 1s box-shadow;
-  position: relative;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
 }
 .homepage .container a .item .item_pic img {
   width: 100%;
@@ -175,9 +175,16 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
   color: rgb(204, 204, 204);
   text-align: center;
   margin-top: 20px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
 }
-.homepage .container a:hover h1:hover {
+.homepage .container a .item:hover .item_pic {
+  border: 5px solid #f3ce5e;
+  transform: scale(0.9);
+}
+.homepage .container a .item:hover h1 {
   color: #f3ce5e;
+  transform: scale(0.7);
 }
 
 section.phone_mgmt {
