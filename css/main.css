@@ -126,7 +126,7 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
 .modalPhone .modal-content {
   background-color: #fff;
   border-radius: 0;
-  height: 80vh;
+  height: 90vh;
 }
 .modalPhone .modal-content .modal-header .modal-title {
   margin: 0 auto;
@@ -134,12 +134,20 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
 }
 .modalPhone .modal-content .modal-body form {
   background: #ffdde1;
-  background: -webkit-linear-gradient(to right, #ee9ca7, #ffdde1);
-  background: linear-gradient(to left, #ee9ca7, #ffdde1);
-  padding: 20px;
+  padding: 16px;
+  border-radius: 5px;
 }
 .modalPhone .modal-content .modal-body form .form-group {
   padding-bottom: 10px;
+}
+.modalPhone .modal-content .modal-body form .form-group .input-group .input-group-prepend {
+  padding: 15px;
+  background: #ee9ca7;
+}
+.modalPhone .modal-content .modal-body form .form-group .input-group .input-group-prepend .input-group-text {
+  border: none;
+  padding: 0;
+  background: none;
 }
 
 .homepage {

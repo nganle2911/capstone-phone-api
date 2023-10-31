@@ -2,7 +2,7 @@
     .modal-content {
         background-color: $white-3;
         border-radius: 0;
-        height: 80vh;
+        height: 90vh;
 
         .modal-header {
             .modal-title {
@@ -15,12 +15,24 @@
             
             form {
                 background: $pink-2;
-                background: -webkit-linear-gradient(to right, $pink-3, $pink-2);
-                background: linear-gradient(to left, $pink-3, $pink-2);
-                padding: $num-20;
+                padding: $num-16;
+                border-radius: $num-5;
 
                 .form-group {
                     padding-bottom: $num-10;
+
+                    .input-group {
+                        .input-group-prepend {
+                            padding: $num-15;
+                            background: $pink-3;
+
+                            .input-group-text {
+                                border: none;
+                                padding: 0;
+                                background: none;
+                            }
+                        }
+                    }
                 }
             }
         }
