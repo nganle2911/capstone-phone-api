@@ -57,7 +57,25 @@ function createProduct() {
       method: "GET",
     })
       .then(function (res) {
-        Sorting(res.data);
+        AsSorting(res.data);
+        console.log(res.data);
+        turnOffLoading();
+      })
+      .catch(function (err) {
+        turnOffLoading();
+      });
+
+  }
+
+  function sortProductsdescending(){
+    console.log("Sorting products ascending");
+    turnOnLoading();
+    axios({
+      url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
+      method: "GET",
+    })
+      .then(function (res) {
+        DesSorting(res.data);
         console.log(res.data);
         turnOffLoading();
       })
