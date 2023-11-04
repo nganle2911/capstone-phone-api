@@ -67,7 +67,7 @@ function createProduct() {
 
   }
 
-  function sortProductsdescending(){
+  function sortProductsDescending(){
     console.log("Sorting products ascending");
     turnOnLoading();
     axios({
