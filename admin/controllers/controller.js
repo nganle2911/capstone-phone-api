@@ -58,8 +58,10 @@ function getDataForm() {
 
 function AsSorting(productArr) {
   var contentHTML = "";
-  productArr.sort((a, b) => a.price - b.price);
-  for (var i = 0; i < productArr.length; i++) {
+  var sortedArr = productArr.sort((a, b) => a.price - b.price);
+
+  renderProductList(sortedArr);
+  /* for (var i = 0; i < productArr.length; i++) {
     var product = productArr[i];
     var trString = `
       <tr>
@@ -84,13 +86,15 @@ function AsSorting(productArr) {
       `;
     contentHTML += trString;
   }
-  document.getElementById("tblDanhSachSP").innerHTML = contentHTML;
+  document.getElementById("tblDanhSachSP").innerHTML = contentHTML; */
 }
 
 function DesSorting(productArr) {
   var contentHTML = "";
-  productArr.sort((a, b) => b.price - a.price);
-  for (var i = 0; i < productArr.length; i++) {
+  var sortedArr = productArr.sort((a, b) => b.price - a.price);
+
+  renderProductList(sortedArr); 
+  /* for (var i = 0; i < productArr.length; i++) {
     var product = productArr[i];
     var trString = `
       <tr>
@@ -114,6 +118,7 @@ function DesSorting(productArr) {
       </tr>
       `;
     contentHTML += trString;
-  }
-  document.getElementById("tblDanhSachSP").innerHTML = contentHTML;
+  } */
+  // document.getElementById("tblDanhSachSP").innerHTML = contentHTML;
 }
+
