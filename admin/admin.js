@@ -37,7 +37,6 @@ function deleteProduct(id) {
 
 // 3. add new product 
 function createProduct() {
-  // console.log("yess");
   var product = getDataForm();
 
   axios({
