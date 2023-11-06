@@ -209,6 +209,17 @@ section.phone_mgmt .phone_header {
   color: #fff;
   border-radius: 20px 20px 0 0;
 }
+section.phone_mgmt .phone_header .btn_groups {
+  display: flex;
+  align-items: center;
+}
+section.phone_mgmt .phone_header .btn_groups .filter {
+  margin-right: 15px;
+}
+section.phone_mgmt .phone_header .btn_groups .filter .dropdown-menu .dropdown-item:active {
+  background-color: #176B87;
+  color: #fff;
+}
 section.phone_mgmt .phone_header button {
   background-color: #176B87;
   border: 1px solid #176B87;

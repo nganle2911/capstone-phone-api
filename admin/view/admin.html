@@ -81,19 +81,22 @@
         <div class="container">
             <div class="phone_header">
                 <h3>Phone Management</h3>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    data-bs-whatever="@mdo">
-                    <i class="fa fa-plus-circle"></i>
-                    Add Phone
-                </button>
-                <button type="button" class="btn btn-primary" onclick="sortProductsAscending()">
-                    <i class="fa fa-plus-circle"></i>
-                    Sort Ascending
-                </button>
-                <button type="button" class="btn btn-primary" onclick="sortProductsDescending()">
-                    <i class="fa fa-plus-circle"></i>
-                    Sort Descending
-                </button>
+                <div class="btn_groups">
+                    <div class="dropdown filter">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-funnel-dollar"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" onclick="sortProductsAscending()">Sort Ascending Price</a></li>
+                            <li><a class="dropdown-item" onclick="sortProductsDescending()">Sort Descending Price</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        data-bs-whatever="@mdo">
+                        <i class="fa fa-plus-circle"></i>
+                        Add Phone
+                    </button>
+                </div>        
             </div>
 
             <div class="phone_table">

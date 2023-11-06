@@ -101,6 +101,7 @@ function updateProduct() {
   })
 }
 
+// 6. sort product by price 
 function sortProductsAscending() {
   console.log("Sorting products ascending");
   turnOnLoading();
