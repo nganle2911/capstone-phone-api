@@ -39,22 +39,34 @@ function deleteProduct(id) {
 function createProduct() {
   var product = getDataForm();
 
-  axios({
-    url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
-    method: "POST",
-    data: product,
-  })
-    .then(function (res) {
-      console.log("product:", res.data)
-      fetchProductList();
-      // tắt modal sau khi thêm thành công
-      // $("#myModal").modal("hide");
-      // reset form sau khi thêm thành công
-      document.getElementById("myForm").reset();
+  // Check validation of input field
+  var isValid;
+  isValid = checkEmpty(product.name, "tbName") 
+          & checkEmpty(product.price, "tbPrice") 
+          & checkEmpty(product.screen, "tbScreen") 
+          & checkEmpty(product.backCamera, "tbBackCam") 
+          & checkEmpty(product.frontCamera, "tbFrontCam") 
+          & checkEmpty(product.img, "tbLink") 
+          & checkEmpty(product.desc, "tbDesc"); 
+
+  if (isValid) {
+    axios({
+      url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
+      method: "POST",
+      data: product,
     })
-    .catch(function (err) {
-      console.log("err", err);
-    });
+      .then(function (res) {
+        console.log("product:", res.data)
+        fetchProductList();
+
+        // reset form sau khi thêm thành công
+        document.getElementById("myForm").reset();
+      })
+      .catch(function (err) {
+        console.log("err", err);
+      });
+  }
+  
 }
 
 // 4. edit product 
