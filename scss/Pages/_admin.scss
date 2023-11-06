@@ -25,6 +25,16 @@ section.phone_mgmt {
                 color: $black-2;
                 font-weight: bolder;
             }
+
+            thead {
+                tr {
+                    th {
+                        &:nth-child(6) {
+                            width: $num-150 + 20;
+                        }
+                    }
+                }
+            }
         }
     }
 }

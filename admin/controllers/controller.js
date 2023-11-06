@@ -7,20 +7,18 @@ function renderProductList(productArr) {
                   <td>${product.id}</td>
                   <td>${product.name}</td>
                   <td>${product.price}</td>
-                  <td>${product.img}</td>
+                  <td>
+                    <img src=${product.img} alt="..." style="width: 50px" />
+                  </td>
                   <td>${product.desc}</td>
                   <td>
-  
-                          <button
-                          onclick=editProduct(${product.id})
-                          class="btn btn-warning">Edit</button>
-  
-                          <button
-                          onclick=deleteProduct(${product.id})
-                          class="btn btn-danger">Delete</button>
-  
-                  </td>
-                  
+                    <button
+                    onclick=editProduct(${product.id})
+                    class="btn btn-warning mx-1">Edit</button>
+                    <button
+                    onclick=deleteProduct(${product.id})
+                    class="btn btn-danger">Delete</button>
+                  </td>       
       </tr>
       `;
       contentHTML += trString;
