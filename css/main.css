@@ -223,3 +223,6 @@ section.phone_mgmt .phone_table .table thead, section.phone_mgmt .phone_table .t
 section.phone_mgmt .phone_table .table thead tr th:nth-child(6) {
   width: 170px;
 }
+section.phone_mgmt .phone_table .table #tblDanhSachSP tr, section.phone_mgmt .phone_table .table #tblDanhSachSP td {
+  font-weight: lighter;
+}
