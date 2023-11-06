@@ -126,7 +126,6 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
 .modalPhone .modal-content {
   background-color: #fff;
   border-radius: 0;
-  height: 90vh;
 }
 .modalPhone .modal-content .modal-header .modal-title {
   margin: 0 auto;
@@ -136,6 +135,7 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
   background: #ffdde1;
   padding: 16px;
   border-radius: 5px;
+  height: auto;
 }
 .modalPhone .modal-content .modal-body form .form-group {
   padding-bottom: 10px;
@@ -148,6 +148,9 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
   border: none;
   padding: 0;
   background: none;
+}
+.modalPhone .modal-content .modal-body form .form-group .sp-thongbao {
+  color: red;
 }
 
 .homepage {

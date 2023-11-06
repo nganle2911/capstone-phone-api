@@ -16,8 +16,8 @@ function fetchProductList() {
 }
 
 fetchProductList();
-//   2. xoá 1 sp trên server
 
+// 2. xoá 1 sp trên server
 function deleteProduct(id) {
   turnOnLoading();
   axios({
@@ -29,13 +29,15 @@ function deleteProduct(id) {
       fetchProductList();
     })
     .catch(function (err) {
+      console.log("err", err);
       turnOffLoading();
     });
 }
 
 function createProduct() {
-  console.log("yess");
+  // console.log("yess");
   var product = getDataForm();
+
   axios({
     url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
     method: "POST",
@@ -46,7 +48,9 @@ function createProduct() {
       // tắt modal sau khi thêm thành công
       // $("#myModal").modal("hide");
     })
-    .catch(function (err) { });
+    .catch(function (err) {
+      console.log("err", err);
+    });
 }
 
 function sortProductsAscending() {
