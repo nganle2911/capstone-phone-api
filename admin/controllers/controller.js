@@ -57,7 +57,6 @@ function getDataForm() {
 }
 
 function AsSorting(productArr) {
-  var contentHTML = "";
   var sortedArr = productArr.sort((a, b) => a.price - b.price);
 
   renderProductList(sortedArr);
@@ -90,7 +89,6 @@ function AsSorting(productArr) {
 }
 
 function DesSorting(productArr) {
-  var contentHTML = "";
   var sortedArr = productArr.sort((a, b) => b.price - a.price);
 
   renderProductList(sortedArr); 

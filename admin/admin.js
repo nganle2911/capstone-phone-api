@@ -137,3 +137,27 @@ function sortProductsDescending() {
     });
 
 }
+
+// 7. Search products by name
+function searchByName() {
+  // get input value
+  var inputValue = document.getElementById("inputSearch").value.toUpperCase();
+  // get all rows of tbody  
+  var trBody = document.getElementById("tblDanhSachSP").getElementsByTagName("tr");
+
+  for (var i = 0; i < trBody.length; i++) {
+    // dom to column name of table 
+    var tdName = trBody[i].getElementsByTagName("td")[1];
+
+    if (tdName) {
+      // get text value of tdName
+      var txtName = tdName.innerText;
+      
+      if (txtName.toUpperCase().indexOf(inputValue) > -1) {
+        trBody[i].style.display = "";
+      } else {
+        trBody[i].style.display = "none";
+      }
+    }
+  }
+}
