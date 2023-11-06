@@ -13,6 +13,19 @@ section.phone_mgmt {
             display: flex;
             align-items: center;
 
+            .search {
+                margin-right: $num-15;
+                
+                .btnSearch {
+                    color: $white-3;
+                    border-radius: $num-5;
+
+                    i {
+                        margin: 0;
+                    }
+                }
+            }
+
             .filter {
                 margin-right: $num-15;
 
@@ -22,6 +35,16 @@ section.phone_mgmt {
                             background-color: $blue-3;
                             color: $white-3;
                         }
+                    }
+                }
+            }
+
+            .btnAdd {
+                .btn_add {
+                    width: $num-150 - 20;
+
+                    &:active {
+                        background-color: $blue-3;
                     }
                 }
             }

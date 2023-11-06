@@ -82,6 +82,10 @@
             <div class="phone_header">
                 <h3>Phone Management</h3>
                 <div class="btn_groups">
+                    <div class="input-group flex-nowrap search">
+                        <button class="btn btn-check btnSearch"><i class="fa fa-search"></i></button>
+                        <input type="text" class="form-control" placeholder="Search for name..." aria-label="Search">
+                    </div>
                     <div class="dropdown filter">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-funnel-dollar"></i>
@@ -91,11 +95,12 @@
                             <li><a class="dropdown-item" onclick="sortProductsDescending()">Sort Descending Price</a></li>
                         </ul>
                     </div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-bs-whatever="@mdo">
-                        <i class="fa fa-plus-circle"></i>
-                        Add Phone
-                    </button>
+                    <div class="btnAdd">
+                        <button type="button" class="btn btn-primary btn_add" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                            <i class="fa fa-plus-circle"></i>
+                            Add Phone
+                        </button>
+                    </div>
                 </div>        
             </div>
 

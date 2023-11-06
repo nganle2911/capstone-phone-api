@@ -213,12 +213,28 @@ section.phone_mgmt .phone_header .btn_groups {
   display: flex;
   align-items: center;
 }
+section.phone_mgmt .phone_header .btn_groups .search {
+  margin-right: 15px;
+}
+section.phone_mgmt .phone_header .btn_groups .search .btnSearch {
+  color: #fff;
+  border-radius: 5px;
+}
+section.phone_mgmt .phone_header .btn_groups .search .btnSearch i {
+  margin: 0;
+}
 section.phone_mgmt .phone_header .btn_groups .filter {
   margin-right: 15px;
 }
 section.phone_mgmt .phone_header .btn_groups .filter .dropdown-menu .dropdown-item:active {
   background-color: #176B87;
   color: #fff;
+}
+section.phone_mgmt .phone_header .btn_groups .btnAdd .btn_add {
+  width: 130px;
+}
+section.phone_mgmt .phone_header .btn_groups .btnAdd .btn_add:active {
+  background-color: #176B87;
 }
 section.phone_mgmt .phone_header button {
   background-color: #176B87;
