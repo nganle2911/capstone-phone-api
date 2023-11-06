@@ -120,3 +120,7 @@ function DesSorting(productArr) {
   // document.getElementById("tblDanhSachSP").innerHTML = contentHTML;
 }
 
+// reset form when click Close button 
+function resetForm() {
+  document.getElementById("myForm").reset();
+}

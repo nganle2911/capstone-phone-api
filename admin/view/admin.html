@@ -45,33 +45,25 @@
                     <i class="fa fa-robot"></i>
                     Cyber Phone
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav nav_left">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../index.html">
-                                <div><i class="fa fa-home"></i></div>
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../customer/view/customer.html">
-                                <div><i class="fa fa-store"></i></div>
-                                Store
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav nav_right">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">
-                                <div><i class="fa fa-shopping-cart"></i></div>
-                                Cart
-                            </a>
-                        </li>
-                    </ul>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">
+                            <div><i class="fa fa-home"></i></div>
+                            Home
+                        </a>
+                        <a class="nav-link" href="../../customer/view/customer.html">
+                            <div><i class="fa fa-store"></i></div>
+                            Store
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div><i class="fa fa-shopping-cart"></i></div>
+                            Cart
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -233,9 +225,9 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="createProduct()" onclick="validate()" class="btn btn-warning">Add Phone</button>
+                    <button type="button" onclick="createProduct()" class="btn btn-warning">Add Phone</button>
                     <button type="button" class="btn btn-primary" onclick="updateProduct()">Update</button>
-                    <button type="button" class="btn btn-dark" aria-label="Close" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark" aria-label="Close" onclick="resetForm()" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
