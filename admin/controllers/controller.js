@@ -37,13 +37,22 @@ function turnOffLoading() {
 function getDataForm() {
   var ten = document.getElementById("name").value;
   var gia = document.getElementById("price").value;
+  var manHinh = document.getElementById("screen").value; 
+  var backCam = document.getElementById("backCam").value; 
+  var frontCam = document.getElementById("frontCam").value; 
   var hinhAnh = document.getElementById("link").value;
   var moTa = document.getElementById("desc").value;
+  var brand = document.getElementById("brand").value;
+
   return {
     name: ten,
     price: gia,
+    screen: manHinh,
+    backCamera: backCam,
+    frontCamera: frontCam,
     img: hinhAnh,
     desc: moTa,
+    type: brand
   };
 }
 
