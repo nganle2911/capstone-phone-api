@@ -34,53 +34,53 @@ function deleteProduct(id) {
 }
 
 function createProduct() {
-    console.log("yess");
-    var product = getDataForm();
-    axios({
-      url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
-      method: "POST",
-      data: product,
+  console.log("yess");
+  var product = getDataForm();
+  axios({
+    url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
+    method: "POST",
+    data: product,
+  })
+    .then(function (res) {
+      fetchProductList();
+      // tắt modal sau khi thêm thành công
+      // $("#myModal").modal("hide");
     })
-      .then(function (res) {
-        fetchProductList();
-        // tắt modal sau khi thêm thành công
-        // $("#myModal").modal("hide");
-      })
-      .catch(function (err) {});
+    .catch(function (err) { });
 }
 
-  function sortProductsAscending(){
-    console.log("Sorting products ascending");
-    turnOnLoading();
-    axios({
-      url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
-      method: "GET",
+function sortProductsAscending() {
+  console.log("Sorting products ascending");
+  turnOnLoading();
+  axios({
+    url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
+    method: "GET",
+  })
+    .then(function (res) {
+      AsSorting(res.data);
+      console.log(res.data);
+      turnOffLoading();
     })
-      .then(function (res) {
-        AsSorting(res.data);
-        console.log(res.data);
-        turnOffLoading();
-      })
-      .catch(function (err) {
-        turnOffLoading();
-      });
+    .catch(function (err) {
+      turnOffLoading();
+    });
 
-  }
+}
 
-  function sortProductsDescending(){
-    console.log("Sorting products Descending");
-    turnOnLoading();
-    axios({
-      url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
-      method: "GET",
+function sortProductsDescending() {
+  console.log("Sorting products Descending");
+  turnOnLoading();
+  axios({
+    url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
+    method: "GET",
+  })
+    .then(function (res) {
+      DesSorting(res.data);
+      console.log(res.data);
+      turnOffLoading();
     })
-      .then(function (res) {
-        DesSorting(res.data);
-        console.log(res.data);
-        turnOffLoading();
-      })
-      .catch(function (err) {
-        turnOffLoading();
-      });
+    .catch(function (err) {
+      turnOffLoading();
+    });
 
-  }
+}
