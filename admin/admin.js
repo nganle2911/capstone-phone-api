@@ -85,6 +85,23 @@ function editProduct(id) {
   });
 }
 
+// 5. update product
+function updateProduct() {
+  var updatedPhone = getDataForm();
+
+  axios({
+    url: `https://653cc7c7d5d6790f5ec84813.mockapi.io/product/${idEdit}`,
+    method: "PUT",
+    data: updatedPhone
+  }).then((res) => {
+    console.log("res", res.data);
+    fetchProductList();
+    document.getElementById("myForm").reset(); 
+  }).catch((err) => {
+    console.log("err", err);
+  })
+}
+
 function sortProductsAscending() {
   console.log("Sorting products ascending");
   turnOnLoading();
