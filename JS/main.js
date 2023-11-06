@@ -68,7 +68,7 @@ function createProduct() {
   }
 
   function sortProductsDescending(){
-    console.log("Sorting products ascending");
+    console.log("Sorting products Descending");
     turnOnLoading();
     axios({
       url: "https://653cc7c7d5d6790f5ec84813.mockapi.io/product",
