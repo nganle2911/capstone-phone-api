@@ -5,10 +5,10 @@ import { CartProduct } from "./controller/cartProduct.js";
 const getEle = (id) => document.getElementById(id);
 
 let service = new Service();
-let cart=[];
+let cart= [];
 
 
-// Fucntion display the list of products
+// Function display the list of products
 const renderList = (data) => {
   let content = "";
   data.forEach((ele) => {
@@ -59,7 +59,12 @@ const renderList = (data) => {
 // Loop through the product list
 let listProductToCart = (listProduct) => {
   return listProduct.map((ele) => {
+    console.log("ele", ele);
+    console.log("cart", cart);
+
     let item = cart.filter((cartEle) => ele.id === cartEle.product.id);
+    console.log("item", item);
+
     const { id, name, price, screen, backCamera, frontCamera, img, desc, type } = ele;
     const product = new Product(
       id,
@@ -72,24 +77,24 @@ let listProductToCart = (listProduct) => {
       desc,
       type
     );
+    
     return new CartProduct(product);
   });
 };
 
-// Get API
+// Call api to get list of products 
 const getList = () => {
-
-      service
-        .getListAPI()
-        .then((result) => {
-          let currentCart = listProductToCart(result.data);
-          console.log(currentCart);
-          renderList(currentCart);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
+  service
+    .getListAPI()
+    .then((result) => {
+      let currentCart = listProductToCart(result.data);
+      console.log("currentCart", currentCart);
+      renderList(currentCart);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 };
 
 // Display the list of products
-getList()
+getList();
