@@ -77,7 +77,7 @@ function editProduct(id) {
 
   // Hide "Add Phone" button and display "update" button  when edit product
   document.getElementById("btnUpdate").style.display = "block";
-  document.getElementById("btnAdd").style.display = "none";
+  document.getElementById("btnAddPhone").style.display = "none";
 
   idEdit = id; 
 

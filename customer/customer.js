@@ -20,6 +20,7 @@ const renderList = (data) => {
   // cart.forEach((ele) => {
 
   // });
+
   data.forEach((ele) => {
     // id += 1;
     content += `
@@ -41,6 +42,7 @@ const renderList = (data) => {
               <div class="d-flex justify-content-between">
                 <span>$${ele.product.price}  </span>
                 <button class="btn btn-success ml-2" id="btnAdd${ele.product.id}" onclick="addProduct(${ele.product.id})">ADD</button>
+
                 <div class="bg-dark" style="color:white; display:none;" id="qty_${ele.product.id}">
                   <div class="item-row flus-minus d-flex align-items-center">
                     <a class="btn add-btn d-flex align-items-center" onclick="decrQty('${ele.product.id}')">
@@ -250,5 +252,4 @@ getList().then((result) => {
     }
   });
 });
-
 

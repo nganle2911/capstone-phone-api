@@ -124,5 +124,5 @@ function DesSorting(productArr) {
 function resetForm() {
   document.getElementById("myForm").reset();
   document.getElementById("btnUpdate").style.display = "none";
-  document.getElementById("btnAdd").style.display = "block";
+  document.getElementById("btnAddPhone").style.display = "block";
 }
