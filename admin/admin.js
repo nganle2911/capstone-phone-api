@@ -75,6 +75,9 @@ function editProduct(id) {
   var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));
   myModal.show(); 
 
+  // Hide "Add Phone" button when edit product
+  document.getElementById("btnAdd").style.display = "none";
+
   idEdit = id; 
 
   axios({
