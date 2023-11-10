@@ -9,6 +9,47 @@ section.phone_mgmt {
         color: $white-3;
         border-radius: $num-20 $num-20 0 0;
 
+        .btn_groups {
+            display: flex;
+            align-items: center;
+
+            .search {
+                margin-right: $num-15;
+                
+                .btnSearch {
+                    color: $white-3;
+                    border-radius: $num-5;
+
+                    i {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .filter {
+                margin-right: $num-15;
+
+                .dropdown-menu {
+                    .dropdown-item {
+                        &:active {
+                            background-color: $blue-3;
+                            color: $white-3;
+                        }
+                    }
+                }
+            }
+
+            .btnAdd {
+                .btn_add {
+                    width: $num-150 - 20;
+
+                    &:active {
+                        background-color: $blue-3;
+                    }
+                }
+            }
+        }
+
         button {
             background-color: $blue-3;
             border: 1px solid $blue-3;
@@ -24,6 +65,22 @@ section.phone_mgmt {
             thead, tr, th {
                 color: $black-2;
                 font-weight: bolder;
+            }
+
+            thead {
+                tr {
+                    th {
+                        &:nth-child(6) {
+                            width: $num-150 + 20;
+                        }
+                    }
+                }
+            }
+
+            #tblDanhSachSP {
+                tr, td {
+                    font-weight: lighter;
+                }
             }
         }
     }

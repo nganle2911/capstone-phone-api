@@ -13,63 +13,28 @@ header.admin_header {
                 }
             }
 
+            .navbar-toggler {
+                background: $white-3;
+            }
+
             .navbar-collapse {
-                display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
 
-                .nav_left {
-                    margin-left: $num-20;
-
-                    .nav-item {
-                        margin-right: $num-30;
+                .navbar-nav {
+                    .nav-link {
+                        text-align: center;
+                        color: $white-3;
+                        margin-left: $num-20;
                         transform: scale(1);
+                        transition: 0.3s ease-in-out;
                         
-                        .nav-link {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            color: $white-3;
-                            transition: 0.3s ease-in-out;
-
-                            i {
-                                font-size: $num-20 + 5;
-                            }
-                        }
-
                         &:hover {
-                            .nav-link:hover {
-                                transform: scale(1.2);
-                            }
-                        }
-                    }
-                }
-
-                .nav_right {
-                    .nav-item {
-                        transform: scale(1);
-
-                        .nav-link {
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            color: $white-3;
-                            transition: 0.3s ease-in-out;
-
-                            i {
-                                font-size: $num-20 + 5;
-                            }
-                        }
-
-                        &:hover {
-                            .nav-link:hover {
-                                transform: scale(1.2);
-                            }
+                            transform: scale(1.3);
                         }
                     }
                 }
             }
+
         }
     }
 }

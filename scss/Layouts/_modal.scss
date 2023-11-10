@@ -2,7 +2,6 @@
     .modal-content {
         background-color: $white-3;
         border-radius: 0;
-        height: 90vh;
 
         .modal-header {
             .modal-title {
@@ -17,6 +16,7 @@
                 background: $pink-2;
                 padding: $num-16;
                 border-radius: $num-5;
+                height: auto;
 
                 .form-group {
                     padding-bottom: $num-10;
@@ -32,6 +32,10 @@
                                 background: none;
                             }
                         }
+                    }
+
+                    .sp-thongbao {
+                        color: red;
                     }
                 }
             }
