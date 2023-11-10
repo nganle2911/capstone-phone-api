@@ -123,4 +123,6 @@ function DesSorting(productArr) {
 // reset form when click Close button 
 function resetForm() {
   document.getElementById("myForm").reset();
+  document.getElementById("btnUpdate").style.display = "none";
+  document.getElementById("btnAddPhone").style.display = "block";
 }
