@@ -1,8 +1,8 @@
-const getEle = (id) => document.getElementById(id);
-
 import { Service } from "./controller/index.js";
 import { Product } from "./controller/product.js";
 import { CartProduct } from "./controller/cartProduct.js";
+
+const getEle = (id) => document.getElementById(id);
 
 let service = new Service();
 let cart = [];
@@ -10,6 +10,7 @@ let cart = [];
 let setLocalStorage = (data) => {
   const str = JSON.stringify(data);
   localStorage.setItem("Phone_List", str);
+  console.log("setLocalStorage", str);
 };
 
 const renderList = (data) => {
@@ -61,7 +62,9 @@ const renderList = (data) => {
         `;
   });
   getEle("listSP").innerHTML = content;
+
   data.forEach((ele) => {
+    console.log("ele.quantity", ele.quantity);
     if (ele.quantity > 0) {
       getEle(`qty_${ele.product.id}`).style.display = "block";
       getEle(`btnAdd${ele.product.id}`).style.display = "none";
@@ -77,6 +80,7 @@ const getList = () => {
         .getListAPI()
         .then((result) => {
           let currentCart = listProductToCart(result.data);
+          console.log(currentCart);
           renderList(currentCart);
         })
         .catch((error) => {
@@ -131,6 +135,7 @@ window.OnChangePhone = (option) => {
       console.log(error);
     });
 };
+
 //Input: cart
 //Output: totalPrice = Tong(priceItem);
 // TH1: cart.length === 0:
@@ -148,6 +153,7 @@ let calcTotalPrice = (cart) => {
   }
   return totalPrice;
 };
+
 let renderCart = (cart) => {
   let content = "";
   cart.forEach((ele) => {

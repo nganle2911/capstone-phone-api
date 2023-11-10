@@ -227,3 +227,31 @@ section.phone_mgmt .phone_table .table thead tr th:nth-child(6) {
 section.phone_mgmt .phone_table .table #tblDanhSachSP tr, section.phone_mgmt .phone_table .table #tblDanhSachSP td {
   font-weight: lighter;
 }
+
+section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table thead {
+  background-color: #d2c9ff;
+}
+section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity {
+  width: auto;
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity span {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  border: 1px solid rgb(200, 200, 200);
+  position: relative;
+}
+section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity span i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  border-top: 1px solid rgb(200, 200, 200);
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
