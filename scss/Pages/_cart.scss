@@ -7,6 +7,7 @@ section.cart {
                         .table {
                             thead {
                                 background-color: $purple-4;
+                                
                             }
 
                             tbody {
@@ -24,6 +25,7 @@ section.cart {
                                                     height: 30px;
                                                     font-size: 12px;
                                                     border: 1px solid $black-3;
+                                                    cursor: pointer;
                                                     position: relative;
 
                                                     i {

@@ -241,6 +241,7 @@ section.cart .container .cart_content .cart-shopping .cart_left .cart_table .tab
   height: 30px;
   font-size: 12px;
   border: 1px solid rgb(200, 200, 200);
+  cursor: pointer;
   position: relative;
 }
 section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity span i {
