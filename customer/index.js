@@ -127,7 +127,7 @@ const renderCart = () => {
 
             listCartHTML += `
                 <tr id=item_${product.id}>
-                    <td><img src=${product.img} alt="..." width="100px" /></td>
+                    <td><img src=${product.img} alt="..." width="80px" /></td>
                     <td>
                     <h6 class="text-muted">${product.type}</h6>
                     <h6 class="text-black mb-0">${product.name}</h6>

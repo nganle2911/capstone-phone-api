@@ -1,5 +1,6 @@
 // Helpers 
 @import "./Helpers/variables"; 
+@import "./Helpers/mixin";
 
 // Base
 @import "./Base/reset";
@@ -10,9 +11,9 @@
 
 // Layouts
 @import "./Layouts/modal";
+@import "./Layouts/cart";
 
 // Pages 
 @import "./Pages/homepage"; 
 @import "./Pages/admin";
-@import "./Pages/cart";
 @import "./Pages/customer";

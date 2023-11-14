@@ -1,5 +1,5 @@
 footer.admin_footer {
-    background-image: linear-gradient(to bottom, $blue-2, $purple-2);
+    @include colorGradient($blue-2, $purple-2);
     color: $white-3;
 
     .footer_top {

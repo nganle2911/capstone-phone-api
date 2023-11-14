@@ -33,7 +33,9 @@ header.admin_header .navbar .container .navbar-collapse .navbar-nav .nav-link:ho
 }
 
 footer.admin_footer {
-  background-image: linear-gradient(to bottom, #242662, #87315B);
+  background: #242662;
+  background: -webkit-linear-gradient(to left, #87315B, #242662);
+  background: linear-gradient(to top, #87315B, #242662);
   color: #fff;
 }
 footer.admin_footer .footer_top {
@@ -125,6 +127,34 @@ footer.admin_footer .footer_bottom .container p.text_bottom a {
 }
 .modalPhone .modal-content .modal-body form .form-group .sp-thongbao {
   color: red;
+}
+
+.shoppingCart .offcanvas-body .cart_table #listCart tr td:nth-child(4) span {
+  cursor: pointer;
+}
+.shoppingCart .offcanvas-body .cart_table #listCart tr td:nth-child(4) span:nth-child(2) {
+  margin: 0 10px;
+}
+.shoppingCart .offcanvas-body .cart_table #listCart tr td:nth-child(6) {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.shoppingCart .offcanvas-body .cart_table #listCart tr td:nth-child(6):hover {
+  color: #BE3144;
+}
+.shoppingCart .offcanvas-footer {
+  margin: 0;
+  text-align: center;
+}
+.shoppingCart .offcanvas-footer .col-6 {
+  padding: 20px 0;
+}
+.shoppingCart .offcanvas-footer .col-6 h4 {
+  color: #fff;
+  margin: 0;
+}
+.shoppingCart .offcanvas-footer .col-6:nth-child(2) {
+  cursor: pointer;
 }
 
 .homepage {
@@ -226,35 +256,6 @@ section.phone_mgmt .phone_table .table thead tr th:nth-child(6) {
 }
 section.phone_mgmt .phone_table .table #tblDanhSachSP tr, section.phone_mgmt .phone_table .table #tblDanhSachSP td {
   font-weight: lighter;
-}
-
-section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table thead {
-  background-color: #d2c9ff;
-}
-section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity {
-  width: auto;
-  display: inline-flex;
-  flex-wrap: nowrap;
-}
-section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity span {
-  width: 30px;
-  height: 30px;
-  font-size: 12px;
-  border: 1px solid rgb(200, 200, 200);
-  cursor: pointer;
-  position: relative;
-}
-section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity span i {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-section.cart .container .cart_content .cart-shopping .cart_left .cart_table .table tbody tr td:nth-child(4) .btn_quantity input {
-  width: 40px;
-  text-align: center;
-  border: none;
-  border-top: 1px solid rgb(200, 200, 200);
-  border-bottom: 1px solid rgb(200, 200, 200);
 }
 
 .middle-1 #listSP .card-item .card .card-header {
