@@ -69,6 +69,32 @@ const getListApi = () => {
 // Display the list of products
 getListApi();
 
+const fetchFilter = (nameType) => {
+    service.getListAPI().then((result) => {
+        productsList = result.data.filter((phone) => phone.type === nameType);
+        console.log("productsList", productsList);
+
+        // render products on UI
+        renderList(productsList); 
+
+        // get cart from localStorage
+        getCartFromLocalStorage();
+    }).catch((err) => {
+        console.log(err);
+    });
+};
+
+getEle("selectList").addEventListener("change", function () {
+    if (getEle("selectList").value === "Apple") {
+      fetchFilter("Apple");
+    } else if (getEle("selectList").value === "Samsung") {
+      fetchFilter("Samsung");
+    } else {
+        getListApi();
+    }
+  });
+
+
 // todo: add product to cart by clicking on "add" button on each product => product will be added to cart
 window.addToCart = (product_id) => {
     console.log("product_id", product_id);
