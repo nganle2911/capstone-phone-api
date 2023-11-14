@@ -15,19 +15,26 @@ const renderList = () => {
             content += `
             <div class="card-item col-3 mt-4">
               <div class="card">
-                  <img
-                  src="${ele.img}"
-                  class="img-fluid py-5"
-                  style="width: 15.625em"
-                  alt=""
-                  />
+                <div class="card-header">
+                    <img
+                    src="${ele.img}"
+                    class="img-fluid py-3"
+                    style="width: 15em"
+                    alt=""
+                    />
+                  </div>
                   <div class="card-body" id="card_body${ele.id}">
                     <h3 class="card-title">${ele.name}</h3>
                     <div class="card-text pb-4">
-                       <span class="descText">Camera sau:</span> ${ele.backCamera} <br />
-                        <span class="descText">Camera trước: </span>${ele.frontCamera} <br />
-                        <span class="descText">Màn hình: </span>${ele.screen} <br />
-                        <span class="descText">Là một sản phẩm có </span>${ele.desc}
+                        <a data-bs-toggle="collapse" href="#collapseItem${ele.id}" role="button" aria-expanded="false" aria-controls="collapseExample">Click for more details</a>
+                        <div class="collapse mt-2" id="collapseItem${ele.id}">
+                            <div class="card card-body">
+                                <span class="descText"><strong>Camera sau: </strong>${ele.backCamera}</span>
+                                <span class="descText"><strong>Camera trước: </strong>${ele.frontCamera}</span>
+                                <span class="descText"><strong>Màn hình: </strong>${ele.screen}</span>
+                                <span class="descText"><strong>Mô tả: </strong>${ele.desc}</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="d-flex justify-content-between">
                       <span>$${ele.price}</span>
@@ -59,12 +66,15 @@ const getListApi = () => {
         console.log(err);
     });
 };
+// Display the list of products
+getListApi();
 
 // todo: add product to cart by clicking on "add" button on each product => product will be added to cart
 window.addToCart = (product_id) => {
+    console.log("product_id", product_id);
     // find the position of this item in cart array => to add quantity if product_id is the same 
     let itemPositionInCart = cart.findIndex((value) => {
-        console.log("value", value);
+        // console.log("value", value);
         return value.product_id === product_id; 
     });
     console.log("ItemPositionInCart", itemPositionInCart);
@@ -100,17 +110,17 @@ const renderCart = () => {
     let totalAmount = 0; 
 
     if (cart.length > 0) {
-        console.log("cart", cart);
+        // console.log("cart", cart);
         cart.map((itemCart) => {
-            console.log("itemCart", itemCart);
+            // console.log("itemCart", itemCart);
             totalQuantity += itemCart.quantity; 
 
-            console.log("productsList", productsList);
+            // console.log("productsList", productsList);
             // search in productsList array, get product.id == itemCart.product_id
             let product = productsList.find((product) => {
                 return product.id == itemCart.product_id; 
             });
-            console.log("product", product);
+            // console.log("product", product);
 
             let amount = itemCart.quantity * product.price; 
             totalAmount += amount; 
@@ -189,9 +199,6 @@ window.removeItemInCart = (product_id) => {
     renderCart();
     saveCartToLocalStorage();
 }
-
-// Display the list of products
-getListApi();
 
 // todo: save cart to localStorage 
 const saveCartToLocalStorage = () => {

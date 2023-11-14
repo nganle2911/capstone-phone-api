@@ -256,3 +256,8 @@ section.cart .container .cart_content .cart-shopping .cart_left .cart_table .tab
   border-top: 1px solid rgb(200, 200, 200);
   border-bottom: 1px solid rgb(200, 200, 200);
 }
+
+.middle-1 #listSP .card-item .card .card-header {
+  text-align: center;
+  background: #FFFFFF;
+}
