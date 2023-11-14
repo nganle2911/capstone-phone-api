@@ -108,6 +108,7 @@ const renderCart = () => {
     let listCartHTML = "";
     let totalQuantity = 0;
     let totalAmount = 0; 
+    console.log("cartRender", cart);
 
     if (cart.length > 0) {
         // console.log("cart", cart);
@@ -230,6 +231,10 @@ const getCartFromLocalStorage = () => {
     if (cartJson != null) {
         // convert cartJson to cart array
         cart = JSON.parse(cartJson);
+
         renderCart();
     }
 }
+
+
+
