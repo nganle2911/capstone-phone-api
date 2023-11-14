@@ -69,16 +69,17 @@ const getListApi = () => {
 // Display the list of products
 getListApi();
 
+// todo: Filter brand 
 const fetchFilter = (nameType) => {
     service.getListAPI().then((result) => {
         productsList = result.data.filter((phone) => phone.type === nameType);
-        console.log("productsList", productsList);
+        console.log("productsList fetchFilter", productsList);
 
         // render products on UI
-        renderList(productsList); 
+        renderList(); 
 
         // get cart from localStorage
-        getCartFromLocalStorage();
+        // getCartFromLocalStorage();
     }).catch((err) => {
         console.log(err);
     });
@@ -86,13 +87,13 @@ const fetchFilter = (nameType) => {
 
 getEle("selectList").addEventListener("change", function () {
     if (getEle("selectList").value === "Apple") {
-      fetchFilter("Apple");
+        fetchFilter("Apple");
     } else if (getEle("selectList").value === "Samsung") {
-      fetchFilter("Samsung");
+        fetchFilter("Samsung");
     } else {
         getListApi();
     }
-  });
+});
 
 
 // todo: add product to cart by clicking on "add" button on each product => product will be added to cart
