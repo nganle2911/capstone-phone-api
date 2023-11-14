@@ -133,28 +133,33 @@ window.addToCart = (product_id) => {
 // todo: render cart on UI
 const renderCart = () => {
     let listCartHTML = "";
+    let positionsNeedToDel = [];
     let totalQuantity = 0;
     let totalAmount = 0; 
-    console.log("cartRender", cart);
-
+    
     if (cart.length > 0) {
-        // console.log("cart", cart);
-        cart.map((itemCart) => {
-            // console.log("itemCart", itemCart);
+        for (let i = 0; i < cart.length; i++) {
+            console.log("itemCart", itemCart);
             totalQuantity += itemCart.quantity; 
 
-            // console.log("productsList", productsList);
-            // search in productsList array, get product.id == itemCart.product_id
-            let product = productsList.find((product) => {
-                return product.id == itemCart.product_id; 
+            // search in productsList array, get position of product of itemCart.product_id == value.id
+            let positionItemCart = productsList.findIndex((value) => {
+                return itemCart.product_id == value.id;
             });
-            // console.log("product", product);
+            console.log("positionItemCart", positionItemCart);
 
-            let amount = itemCart.quantity * product.price; 
-            totalAmount += amount; 
+            if (positionItemCart >= 0) {
+                // search in productsList array, get product's information if product.id == itemCart.product_id
+                let product = productsList.find((product) => {
+                    return product.id == itemCart.product_id;
+                });
+                console.log("product", product);
 
-            listCartHTML += `
-                <tr id=item_${product.id}>
+                let amount = itemCart.quantity * product.price;
+                totalAmount += amount;
+
+                listCartHTML += `
+                <tr id=item_${itemCart.product_id}>
                     <td><img src=${product.img} alt="..." width="80px" /></td>
                     <td>
                     <h6 class="text-muted">${product.type}</h6>
@@ -172,7 +177,12 @@ const renderCart = () => {
                     <td><i class="fa fa-trash-alt" onclick="removeItemInCart(${product.id})"></i></td>
                 </tr>
             `;
-        })
+            } else {
+                positionsNeedToDel.push(i);
+            }
+        } 
+        
+        
     }
 
     getEle("listCart").innerHTML = listCartHTML; 
@@ -258,10 +268,6 @@ const getCartFromLocalStorage = () => {
     if (cartJson != null) {
         // convert cartJson to cart array
         cart = JSON.parse(cartJson);
-
         renderCart();
     }
 }
-
-
-
