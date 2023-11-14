@@ -200,6 +200,19 @@ window.removeItemInCart = (product_id) => {
     saveCartToLocalStorage();
 }
 
+// todo: clear cart when clicking on "Payment" button
+window.handlePayment = () => {
+    if (cart.length <= 0) {
+        alert("Your cart is empty!");
+    } else {
+        let newCart = []; 
+        cart = newCart; 
+
+        renderCart();
+        saveCartToLocalStorage(); 
+    }
+}
+
 // todo: save cart to localStorage 
 const saveCartToLocalStorage = () => {
     // convert data to json format
