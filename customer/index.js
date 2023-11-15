@@ -73,7 +73,6 @@ getListApi();
 const fetchFilter = (nameType) => {
     service.getListAPI().then((result) => {
         productsList = result.data.filter((phone) => phone.type === nameType);
-        console.log("productsList fetchFilter", productsList);
 
         // render products on UI
         renderList(); 
@@ -98,13 +97,11 @@ getEle("selectList").addEventListener("change", function () {
 
 // todo: add product to cart by clicking on "add" button on each product => product will be added to cart
 window.addToCart = (product_id) => {
-    console.log("product_id", product_id);
+    
     // find the position of this item in cart array => to add quantity if product_id is the same 
     let itemPositionInCart = cart.findIndex((value) => {
-        // console.log("value", value);
         return value.product_id === product_id; 
     });
-    console.log("ItemPositionInCart", itemPositionInCart);
 
     // if cart array is empty => add item to cart
     if (cart.length <= 0) {
@@ -123,7 +120,6 @@ window.addToCart = (product_id) => {
         cart[itemPositionInCart].quantity++; 
     }
 
-    console.log("cart after adding items", cart);
     
     // render cart on UI 
     renderCart();
@@ -133,32 +129,29 @@ window.addToCart = (product_id) => {
 // todo: render cart on UI
 const renderCart = () => {
     let listCartHTML = "";
-    let positionsNeedToDel = [];
-    let totalQuantity = 0;
+    // let totalQuantity = 0;
     let totalAmount = 0; 
     
+    console.log("cartRender", cart);
     if (cart.length > 0) {
         for (let i = 0; i < cart.length; i++) {
-            console.log("itemCart", itemCart);
-            totalQuantity += itemCart.quantity; 
+            let itemCart = cart[i];
+            // totalQuantity += itemCart.quantity; 
 
             // search in productsList array, get position of product of itemCart.product_id == value.id
-            let positionItemCart = productsList.findIndex((value) => {
-                return itemCart.product_id == value.id;
+            // let positionItemCart = productsList.findIndex((value) => {
+            //     return itemCart.product_id == value.id;
+            // });
+
+            // search in productsList array, get product's information if product.id == itemCart.product_id
+            let product = productsList.find((product) => {
+                return product.id == itemCart.product_id;
             });
-            console.log("positionItemCart", positionItemCart);
 
-            if (positionItemCart >= 0) {
-                // search in productsList array, get product's information if product.id == itemCart.product_id
-                let product = productsList.find((product) => {
-                    return product.id == itemCart.product_id;
-                });
-                console.log("product", product);
+            let amount = itemCart.quantity * product.price;
+            totalAmount += amount;
 
-                let amount = itemCart.quantity * product.price;
-                totalAmount += amount;
-
-                listCartHTML += `
+            listCartHTML += `
                 <tr id=item_${itemCart.product_id}>
                     <td><img src=${product.img} alt="..." width="80px" /></td>
                     <td>
@@ -177,12 +170,7 @@ const renderCart = () => {
                     <td><i class="fa fa-trash-alt" onclick="removeItemInCart(${product.id})"></i></td>
                 </tr>
             `;
-            } else {
-                positionsNeedToDel.push(i);
-            }
-        } 
-        
-        
+        }  
     }
 
     getEle("listCart").innerHTML = listCartHTML; 
@@ -195,7 +183,7 @@ window.increaseQuantity = (product_id) => {
     let itemPositionCart = cart.findIndex((item) => {
         return item.product_id == product_id;
     });
-    console.log("itemPositionCart", itemPositionCart);
+    
 
     if (itemPositionCart >= 0) {
         cart[itemPositionCart].quantity++; 
@@ -266,8 +254,39 @@ const getCartFromLocalStorage = () => {
     // Check if cartJson is null => don't have data => can't parse 
     // Check if cartJson is not null => parse data 
     if (cartJson != null) {
+        
         // convert cartJson to cart array
-        cart = JSON.parse(cartJson);
+        cart = JSON.parse(cartJson); 
+        
         renderCart();
     }
 }
+
+// window.compareAdminCart = (products, cart) => {
+//     let newCart = [];
+//     cart = getCartFromLocalStorage();
+//     console.log("getCartFromLocalStorage 2", cart);
+    
+
+//     cart.map((itemCart) => {
+//         console.log("itemCart", itemCart);
+        
+//         let productIfExist = products.find((product) => {
+//             return itemCart.product_id == product.id;
+//         })
+//         console.log("productIfExist", productIfExist);
+
+//         if (productIfExist) {
+            
+//             newCart.push(productIfExist);
+//             console.log("newCart", newCart);
+//         }
+//     });
+
+//     cart = newCart;
+//     console.log("cart after compare", cart);
+
+   
+
+//     renderCart();
+// }
