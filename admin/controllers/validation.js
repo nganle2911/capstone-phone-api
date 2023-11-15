@@ -20,16 +20,3 @@ function checkBrand(value, idErr) {
     return false; 
 }
 
-// TODO: Check if product existed 
-function checkProductExist(value, productsList) {
-    var position = productsList.findIndex((item) => {
-        return item.id === value;
-    });
-    if (position != -1) {
-        document.getElementById("tbIdPhone").style.display = "block";
-        document.getElementById("tbIdPhone").innerText = "ID product already existed! Please enter another ID!";
-        return false;
-    }
-    document.getElementById("tbIdPhone").style.display = "none";
-    return true;
-}

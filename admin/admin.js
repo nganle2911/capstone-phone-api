@@ -44,8 +44,7 @@ function createProduct() {
 
   // Check validation of input field
   var isValid;
-  isValid = checkEmpty(product.id, "tbIdPhone") && checkProductExist(product.id, productsList);
-  isValid &= checkEmpty(product.name, "tbName");
+  isValid = checkEmpty(product.name, "tbName");
   isValid &= checkEmpty(product.price, "tbPrice");
   isValid &= checkEmpty(product.screen, "tbScreen");
   isValid &= checkEmpty(product.backCamera, "tbBackCam");
@@ -89,8 +88,6 @@ function editProduct(id) {
     url: `https://653cc7c7d5d6790f5ec84813.mockapi.io/product/${id}`,
     method: "GET"
   }).then((res) => {
-    // console.log("res", res.data);
-    document.getElementById("idPhone").value = res.data.id; 
     document.getElementById("name").value = res.data.name; 
     document.getElementById("price").value = res.data.price; 
     document.getElementById("screen").value = res.data.screen; 
@@ -99,7 +96,6 @@ function editProduct(id) {
     document.getElementById("link").value = res.data.img; 
     document.getElementById("desc").value = res.data.desc; 
     document.getElementById("brand").value = res.data.type; 
-    document.getElementById("idPhone").disabled = true; 
 
   }).catch((err) => {
     console.log("err", err);
@@ -131,7 +127,6 @@ function updateProduct() {
       
       // clear the form 
       document.getElementById("myForm").reset();
-      document.getElementById("idPhone").disabled = false; 
 
       fetchProductList();
     }).catch((err) => {

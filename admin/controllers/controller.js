@@ -35,7 +35,6 @@ function turnOffLoading() {
 }
 
 function getDataForm() {
-  var id = document.getElementById("idPhone").value; 
   var ten = document.getElementById("name").value;
   var gia = document.getElementById("price").value;
   var manHinh = document.getElementById("screen").value; 
@@ -46,7 +45,6 @@ function getDataForm() {
   var brand = document.getElementById("brand").value;
 
   return {
-    id,
     name: ten,
     price: gia,
     screen: manHinh,
@@ -75,5 +73,4 @@ function resetForm() {
   document.getElementById("myForm").reset();
   document.getElementById("btnUpdate").style.display = "none";
   document.getElementById("btnAddPhone").style.display = "block";
-  document.getElementById("idPhone").disabled = false;
 }
