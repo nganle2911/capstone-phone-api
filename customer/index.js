@@ -148,10 +148,11 @@ const renderCart = () => {
                 return product.id == itemCart.product_id;
             });
 
-            let amount = itemCart.quantity * product.price;
-            totalAmount += amount;
+            if (product) {
+                let amount = itemCart.quantity * product.price;
+                totalAmount += amount;
 
-            listCartHTML += `
+                listCartHTML += `
                 <tr id=item_${itemCart.product_id}>
                     <td><img src=${product.img} alt="..." width="80px" /></td>
                     <td>
@@ -170,6 +171,9 @@ const renderCart = () => {
                     <td><i class="fa fa-trash-alt" onclick="removeItemInCart(${product.id})"></i></td>
                 </tr>
             `;
+            } else {
+                listCartHTML += `<tr></tr>`;
+            }
         }  
     }
 
@@ -261,32 +265,3 @@ const getCartFromLocalStorage = () => {
         renderCart();
     }
 }
-
-// window.compareAdminCart = (products, cart) => {
-//     let newCart = [];
-//     cart = getCartFromLocalStorage();
-//     console.log("getCartFromLocalStorage 2", cart);
-    
-
-//     cart.map((itemCart) => {
-//         console.log("itemCart", itemCart);
-        
-//         let productIfExist = products.find((product) => {
-//             return itemCart.product_id == product.id;
-//         })
-//         console.log("productIfExist", productIfExist);
-
-//         if (productIfExist) {
-            
-//             newCart.push(productIfExist);
-//             console.log("newCart", newCart);
-//         }
-//     });
-
-//     cart = newCart;
-//     console.log("cart after compare", cart);
-
-   
-
-//     renderCart();
-// }
