@@ -1,4 +1,5 @@
 var idEdit = null;
+var productsList = []; 
 
 // 1. gọi api lấy danh sách sp từ server
 function fetchProductList() {
@@ -8,7 +9,9 @@ function fetchProductList() {
     method: "GET",
   })
     .then(function (res) {
-      renderProductList(res.data);
+      productsList = res.data;
+      renderProductList(productsList);
+      console.log("productsList", productsList);
       turnOffLoading();
     })
     .catch(function (err) {
@@ -41,13 +44,15 @@ function createProduct() {
 
   // Check validation of input field
   var isValid;
-  isValid = checkEmpty(product.name, "tbName") 
-          & checkEmpty(product.price, "tbPrice") 
-          & checkEmpty(product.screen, "tbScreen") 
-          & checkEmpty(product.backCamera, "tbBackCam") 
-          & checkEmpty(product.frontCamera, "tbFrontCam") 
-          & checkEmpty(product.img, "tbLink") 
-          & checkEmpty(product.desc, "tbDesc"); 
+  isValid = checkEmpty(product.id, "tbIdPhone") && checkProductExist(product.id, productsList);
+  isValid &= checkEmpty(product.name, "tbName");
+  isValid &= checkEmpty(product.price, "tbPrice");
+  isValid &= checkEmpty(product.screen, "tbScreen");
+  isValid &= checkEmpty(product.backCamera, "tbBackCam");
+  isValid &= checkEmpty(product.frontCamera, "tbFrontCam");
+  isValid &= checkEmpty(product.img, "tbLink");
+  isValid &= checkEmpty(product.desc, "tbDesc");
+  isValid &= checkBrand(product.type, "tbBrand"); 
 
   if (isValid) {
     axios({
@@ -56,7 +61,6 @@ function createProduct() {
       data: product,
     })
       .then(function (res) {
-        console.log("product:", res.data)
         fetchProductList();
 
         // reset form sau khi thêm thành công
@@ -85,7 +89,8 @@ function editProduct(id) {
     url: `https://653cc7c7d5d6790f5ec84813.mockapi.io/product/${id}`,
     method: "GET"
   }).then((res) => {
-    console.log("res", res.data);
+    // console.log("res", res.data);
+    document.getElementById("idPhone").value = res.data.id; 
     document.getElementById("name").value = res.data.name; 
     document.getElementById("price").value = res.data.price; 
     document.getElementById("screen").value = res.data.screen; 
@@ -94,6 +99,7 @@ function editProduct(id) {
     document.getElementById("link").value = res.data.img; 
     document.getElementById("desc").value = res.data.desc; 
     document.getElementById("brand").value = res.data.type; 
+    document.getElementById("idPhone").disabled = true; 
 
   }).catch((err) => {
     console.log("err", err);
@@ -104,17 +110,36 @@ function editProduct(id) {
 function updateProduct() {
   var updatedPhone = getDataForm();
 
-  axios({
-    url: `https://653cc7c7d5d6790f5ec84813.mockapi.io/product/${idEdit}`,
-    method: "PUT",
-    data: updatedPhone
-  }).then((res) => {
-    console.log("res", res.data);
-    fetchProductList();
-    document.getElementById("myForm").reset(); 
-  }).catch((err) => {
-    console.log("err", err);
-  })
+  // Check validation of input field
+  var isValid = true;
+  isValid &= checkEmpty(updatedPhone.name, "tbName");
+  isValid &= checkEmpty(updatedPhone.price, "tbPrice");
+  isValid &= checkEmpty(updatedPhone.screen, "tbScreen");
+  isValid &= checkEmpty(updatedPhone.backCamera, "tbBackCam");
+  isValid &= checkEmpty(updatedPhone.frontCamera, "tbFrontCam");
+  isValid &= checkEmpty(updatedPhone.img, "tbLink");
+  isValid &= checkEmpty(updatedPhone.desc, "tbDesc");
+  isValid &= checkBrand(updatedPhone.type, "tbBrand");
+
+  if (isValid) {
+    axios({
+      url: `https://653cc7c7d5d6790f5ec84813.mockapi.io/product/${idEdit}`,
+      method: "PUT",
+      data: updatedPhone
+    }).then((result) => {
+      console.log(result.data);
+      
+      // clear the form 
+      document.getElementById("myForm").reset();
+      document.getElementById("idPhone").disabled = false; 
+
+      fetchProductList();
+    }).catch((err) => {
+      console.log(err);
+    });
+  }
+
+
 }
 
 // 6. sort product by price 

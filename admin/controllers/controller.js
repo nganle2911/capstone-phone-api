@@ -35,6 +35,7 @@ function turnOffLoading() {
 }
 
 function getDataForm() {
+  var id = document.getElementById("idPhone").value; 
   var ten = document.getElementById("name").value;
   var gia = document.getElementById("price").value;
   var manHinh = document.getElementById("screen").value; 
@@ -45,6 +46,7 @@ function getDataForm() {
   var brand = document.getElementById("brand").value;
 
   return {
+    id,
     name: ten,
     price: gia,
     screen: manHinh,
@@ -60,64 +62,12 @@ function AsSorting(productArr) {
   var sortedArr = productArr.sort((a, b) => a.price - b.price);
 
   renderProductList(sortedArr);
-  /* for (var i = 0; i < productArr.length; i++) {
-    var product = productArr[i];
-    var trString = `
-      <tr>
-                  <td>${product.id}</td>
-                  <td>${product.name}</td>
-                  <td>${product.price}</td>
-                  <td>${product.img}</td>
-                  <td>${product.desc}</td>
-                  <td>
-  
-                          <button
-                          onclick=editProduct(${product.id})
-                          class="btn btn-warning">Edit</button>
-  
-                          <button
-                          onclick=deleteProduct(${product.id})
-                          class="btn btn-danger">Delete</button>
-  
-                  </td>
-                  
-      </tr>
-      `;
-    contentHTML += trString;
-  }
-  document.getElementById("tblDanhSachSP").innerHTML = contentHTML; */
 }
 
 function DesSorting(productArr) {
   var sortedArr = productArr.sort((a, b) => b.price - a.price);
 
   renderProductList(sortedArr); 
-  /* for (var i = 0; i < productArr.length; i++) {
-    var product = productArr[i];
-    var trString = `
-      <tr>
-                  <td>${product.id}</td>
-                  <td>${product.name}</td>
-                  <td>${product.price}</td>
-                  <td>${product.img}</td>
-                  <td>${product.desc}</td>
-                  <td>
-  
-                          <button
-                          onclick=editProduct(${product.id})
-                          class="btn btn-warning">Edit</button>
-  
-                          <button
-                          onclick=deleteProduct(${product.id})
-                          class="btn btn-danger">Delete</button>
-  
-                  </td>
-                  
-      </tr>
-      `;
-    contentHTML += trString;
-  } */
-  // document.getElementById("tblDanhSachSP").innerHTML = contentHTML;
 }
 
 // reset form when click Close button 
@@ -125,4 +75,5 @@ function resetForm() {
   document.getElementById("myForm").reset();
   document.getElementById("btnUpdate").style.display = "none";
   document.getElementById("btnAddPhone").style.display = "block";
+  document.getElementById("idPhone").disabled = false;
 }
