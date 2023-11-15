@@ -18,3 +18,8 @@ Phạm Anh Việt
         - Render danh sách sản phẩm 
         - Filter sản phẩm theo brand 
         - Xử lý giỏ hàng
+
+KẾT QUẢ CÔNG VIỆC:  
+- link github: https://github.com/nganle2911/capstone-phone-api/tree/main 
+- link deploy: https://api-capstone-two.vercel.app/ 
+- link youtube: https://www.youtube.com/watch?v=0UsSGnTr5fs 
